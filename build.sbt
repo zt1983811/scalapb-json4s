@@ -1,6 +1,7 @@
 import scalapb.compiler.Version.scalapbVersion
 
-scalaVersion := "2.12.15"
+// scalaVersion := "2.12.15"
+scalaVersion := "2.13.8"
 
 crossScalaVersions := Seq("2.12.15", "2.13.8", "3.1.2")
 
@@ -10,13 +11,14 @@ name := "scalapb-json4s"
 
 ThisBuild / scalacOptions ++= Seq("-deprecation") ++ {
   CrossVersion.partialVersion(scalaVersion.value) match {
-    case Some((2, v)) if v <= 12 => List("-target:jvm-1.8")
+    case Some((2, v)) if v <= 13 => List("-target:jvm-1.8")
     case _                       => Nil
   }
 }
-ThisBuild / scalaVersion := "2.12.15"
+ThisBuild / scalaVersion := "2.13.8"
 // ThisBuild / crossScalaVersions := Seq("2.11.12", "2.12.15", "2.13.8")
-ThisBuild / crossScalaVersions := Seq("2.12.15")
+// ThisBuild / crossScalaVersions := Seq("2.12.15")
+ThisBuild / crossScalaVersions := Seq("2.13.8")
 
 ThisBuild / publishTo := sonatypePublishToBundle.value
 
