@@ -11,7 +11,7 @@ name := "scalapb-json4s"
 
 ThisBuild / scalacOptions ++= Seq("-deprecation") ++ {
   CrossVersion.partialVersion(scalaVersion.value) match {
-    case Some((2, v)) if v <= 13 => List("-target:jvm-1.8")
+    case Some((2, v)) if v <= 11 => List("-target:jvm-1.7")
     case _                       => Nil
   }
 }
