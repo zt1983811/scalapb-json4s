@@ -8,12 +8,12 @@ ThisBuild / organization := "com.thesamet.scalapb"
 
 name := "scalapb-json4s"
 
-ThisBuild / scalacOptions ++= Seq("-deprecation") ++ {
-  CrossVersion.partialVersion(scalaVersion.value) match {
-    case Some((2, v)) if v <= 12 => List("-target:jvm-1.7")
-    case _                       => Nil
-  }
-}
+//ThisBuild / scalacOptions ++= Seq("-deprecation") ++ {
+//  CrossVersion.partialVersion(scalaVersion.value) match {
+//    case Some((2, v)) if v <= 12 => List("-target:jvm-1.7")
+//    case _                       => Nil
+//  }
+//}
 ThisBuild / scalaVersion := "2.12.15"
 ThisBuild / crossScalaVersions := Seq("2.11.12", "2.12.15", "2.13.8")
 
