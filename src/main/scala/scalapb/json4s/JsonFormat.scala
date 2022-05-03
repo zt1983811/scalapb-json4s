@@ -963,6 +963,13 @@ object JsonFormat {
       case (Type.TYPE_BOOL, JBool(b))         => PBoolean(b)
       case (Type.TYPE_BOOL, JString("true"))  => PBoolean(true)
       case (Type.TYPE_BOOL, JString("false")) => PBoolean(false)
+      case (Type.TYPE_BOOL, JInt(i)) => {
+        (i.toInt) match {
+          case (0) => PBoolean(false)
+          case (1) => PBoolean(true)
+          case (_) => onError
+        }
+      }
       case (Type.TYPE_STRING, JString(s))     => PString(s)
       case (Type.TYPE_BYTES, JString(s)) =>
         PByteString(
