@@ -19,6 +19,16 @@ ThisBuild / crossScalaVersions := Seq("2.11.12", "2.12.15", "2.13.8")
 
 ThisBuild / publishTo := sonatypePublishToBundle.value
 
+publishM2 := {
+    publishM2.value
+
+        val d = file(sys.env("HOME")) / s".m2/repository/com/github/zt1983811/sbt-release_${scalaBinaryVersion.value}_${sbtBinaryVersion.value}"
+          d.renameTo(file(sys.env("HOME")) / ".m2/repository/com/github/zt1983811/sbt-release")
+}
+
+sbtPlugin := true
+publishMavenStyle := true
+
 libraryDependencies ++= Seq(
   "com.thesamet.scalapb" %% "scalapb-runtime" % scalapbVersion,
   "com.thesamet.scalapb" %% "scalapb-runtime" % scalapbVersion % "protobuf,test",
