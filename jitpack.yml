@@ -1,0 +1,3 @@
+# jitpack.yml
+# install:
+#    - sbt `echo $ARTIFACT | sed 's/.*2.11$/++2.11.12/;s/.*2.12$/++2.12.11/;s/.*2.13$/++2.13.1/'` publishM2
