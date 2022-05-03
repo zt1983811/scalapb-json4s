@@ -14,6 +14,7 @@ ThisBuild / scalacOptions ++= Seq("-deprecation") ++ {
     case _                       => Nil
   }
 }
+ThisBuild / scalaVersion := scalaVersion
 
 ThisBuild / publishTo := sonatypePublishToBundle.value
 
